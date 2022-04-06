@@ -10,9 +10,10 @@ import pandas as pd
 import numpy as np
 import operator
 import time
-import nltk
 import re
 
+import nltk
+nltk.download('vader_lexicon')
 sia = SentimentIntensityAnalyzer()
 
 def parse(string_data):
@@ -41,8 +42,6 @@ def parse(string_data):
     df["Start"] = start_times
     df["End"] = end_times
     df["Time Spoken (seconds)"] = time_spoken
-
-    nltk.download("vader_lexicon")
 
     df["Total Sentiment"] = df["Content"].apply(
         lambda x: sia.polarity_scores(x)["compound"]
