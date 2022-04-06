@@ -1,4 +1,4 @@
-from nltk.sentiment import SentimentIntensityAnalyzer
+xfrom nltk.sentiment import SentimentIntensityAnalyzer
 from matplotlib import pyplot as plt
 from datetime import datetime
 from time import sleep
@@ -14,6 +14,7 @@ import nltk
 import re
 
 sia = SentimentIntensityAnalyzer()
+nltk.downloader.download('vader_lexicon')
 
 def parse(string_data):
     author_pattern = "<v (.*?)>"
@@ -42,7 +43,7 @@ def parse(string_data):
     df["End"] = end_times
     df["Time Spoken (seconds)"] = time_spoken
 
-    nltk.download("vader_lexicon")
+    #nltk.download("vader_lexicon")
 
     df["Total Sentiment"] = df["Content"].apply(
         lambda x: sia.polarity_scores(x)["compound"]
