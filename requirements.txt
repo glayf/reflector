@@ -2,6 +2,6 @@ altair==4.2.0
 matplotlib==3.5.1
 nltk==3.7
 numpy==1.21.4
-pandas==1.4.1
+pandas==1.3.5
 seleniumbase==2.4.28
 streamlit==1.7.0
