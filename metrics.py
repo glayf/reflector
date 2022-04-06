@@ -1,4 +1,4 @@
-xfrom nltk.sentiment import SentimentIntensityAnalyzer
+from nltk.sentiment import SentimentIntensityAnalyzer
 from matplotlib import pyplot as plt
 from datetime import datetime
 from time import sleep
